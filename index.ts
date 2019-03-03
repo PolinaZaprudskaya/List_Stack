@@ -5,8 +5,8 @@ list.add("Sasha");
 list.add("Dasha");
 list.add("Anya");
 list.add("Katya");
-console.log("list.get(2): " + list.get(2));
-console.log("list.size(): " + list.size());
+list.get(2);
+list.size();
 list.ToString();
 
 

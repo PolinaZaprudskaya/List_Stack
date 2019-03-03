@@ -3,6 +3,7 @@ import { expect } from 'chai';
 import 'mocha';
 
 describe('List test', () => {
+
     const list = new LinkedList<string>();
     list.add("Sasha"); //0
     list.add("Dasha"); //1
