@@ -1,13 +1,14 @@
 import {LinkedList} from "./List";
 
 const list = new LinkedList<string>();
-list.add("Anna");
+list.add("Sasha");
+list.add("Dasha");
+list.add("Anya");
 list.add("Katya");
-list.add("Nastya");
-list.add("Vasya");
+console.log("list.get(2): " + list.get(2));
+console.log("list.size(): " + list.size());
 list.ToString();
-list.get(2);
-list.size();
+
 
 const list_2 = new LinkedList<string>();
 list_2.add("Mobile");
