@@ -19,8 +19,8 @@ export class Stack<T>{
                     return false;
                 }
             }
-            return true;
         }
+        return false;
     }
     public hashcode<T>(): number {
         let hash = 0;
