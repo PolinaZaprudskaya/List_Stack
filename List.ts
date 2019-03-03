@@ -1,6 +1,5 @@
 export class LinkedList<T>{
     private linked_list : { [index:number] : T } = {}
-
     public add(arg: T, index: number): void{
         this.linked_list[index] = arg;
         console.log("Add: : " + arg);
@@ -26,9 +25,14 @@ export class LinkedList<T>{
     public remove<T>(index: number): T {
 
      }
-    public equals<T>(): T {
 
+    public equals<T>(arg: T): boolean {
+        for (let key in this.linked_list) {
+            return this.linked_list[key]===arg[key];
+
+        }
     }
+
     public hashcode<T>(): T {
 
     }
