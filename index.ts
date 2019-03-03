@@ -3,8 +3,6 @@ import {LinkedList} from "./List";
 const list = new LinkedList<string>();
 list.add("Mobile");
 list.add("TV");
-list.add("P");
-list.add("D");
 list.ToString();
 list.get(2);
 list.size();
@@ -17,5 +15,4 @@ list_2.add("TV");
 
 console.log("Equals: " + list.equals(list_2));
 console.log("Hashcode: " + list.hashcode());
-list.remove(2);
-list.ToString();
+list.remove(1);
