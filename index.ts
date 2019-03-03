@@ -9,7 +9,7 @@ list.size();
 
 const list_2 = new LinkedList<string>();
 list_2.add("Mobile",2);
-list_2.add("products",10);
+list_2.add("gh",10);
 
 
 
