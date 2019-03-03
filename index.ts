@@ -13,6 +13,8 @@ list_2.add("TV");
 
 
 
+console.log("ToString: " + list.ToString());
 console.log("Equals: " + list.equals(list_2));
 console.log("Hashcode: " + list.hashcode());
-list.remove(1);
+console.log("Remove" + list.remove(1));
+console.log("ToString: " + list.ToString());

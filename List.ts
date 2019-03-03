@@ -42,22 +42,7 @@ export class LinkedList<T>{
         return hash;
     }
 
-
-
-
     public remove(index: number){
-        let listick: LinkedList<T>;
-        if(this.size() == 0 || index-1 > this.size()) {
-            console.log("Error");
-        }
-        let check: number = 0;
-        for (let i in this.linked_list) {
-            console.log(i);
-            if (check == index - 1) {
-                 continue;
-            }
-            listick.add(this.get(check));
-            check++;
-        }
+        delete this.linked_list[index];
     }
 }
