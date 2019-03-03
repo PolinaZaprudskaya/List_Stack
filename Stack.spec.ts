@@ -30,8 +30,9 @@ describe('Stack test', () => {
     it('Should return true', () => {
         expect(stack_1.equals(stack_2)).to.equal(true);
     });
+    stack_1.push(1);
     it('Should return 1', () => {
-        expect(stack_1.push(1)).to.equal(1); //??????
+        expect(stack_1.pop()).to.equal(1);
     });
 
 

@@ -19,6 +19,7 @@ export class Stack<T>{
                     return false;
                 }
             }
+            return true;
         }
         return false;
     }
