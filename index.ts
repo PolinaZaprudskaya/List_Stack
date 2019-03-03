@@ -7,5 +7,8 @@ stack.push(1);
 stack.push(8);
 stack.push(9);
 stack.ToString();
-a = stack.size();
-console.log(a);
+stack.size();
+
+stack.pop();
+stack.ToString()
+stack.size();

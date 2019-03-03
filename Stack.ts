@@ -1,5 +1,6 @@
 export class Stack<T>{
-    private stack : { [index:number] : T } = {};
+   // private stack : { [index:number] : T } = {};
+    private stack: T[] = [];
     private index:number = 0;
     //push, pop, size, equals, hashcode, toString
     public push(arg: T){
@@ -19,11 +20,11 @@ export class Stack<T>{
         console.log("ToString: " + str);
         return str;
     }
-    /*
-        public pop(){
-
-        }
-        public equals<T>(){
+    public pop(){
+        console.log("---pop---");
+        return this.stack.pop();
+    }
+/*      public equals<T>(){
 
         }
         public hashcode<T>(){
