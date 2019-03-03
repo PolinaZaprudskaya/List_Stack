@@ -33,9 +33,7 @@ export class LinkedList<T>{
         }
         return hash;
     }
-    /*
-        public remove<T>(index: number): T {
+    public remove<T>(index: number){
 
-         }
-    */
+    }
 }
