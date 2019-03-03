@@ -1,8 +1,10 @@
 import {LinkedList} from "./List";
 
 const list = new LinkedList<string>();
-list.add("Mobile");
-list.add("TV");
+list.add("Anna");
+list.add("Katya");
+list.add("Nastya");
+list.add("Vasya");
 list.ToString();
 list.get(2);
 list.size();
@@ -16,5 +18,5 @@ list_2.add("TV");
 console.log("ToString: " + list.ToString());
 console.log("Equals: " + list.equals(list_2));
 console.log("Hashcode: " + list.hashcode());
-console.log("Remove" + list.remove(1));
+list.remove(2);
 console.log("ToString: " + list.ToString());
