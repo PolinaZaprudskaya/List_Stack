@@ -8,4 +8,3 @@ stack.push(8);
 stack.push(9);
 stack.ToString();
 stack.size()
-stack.pop();
