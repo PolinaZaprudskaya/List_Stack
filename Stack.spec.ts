@@ -22,6 +22,8 @@ describe('Stack test', () => {
     });
     it('Should return 4', () => {
         expect(stack.pop()).to.equal(4);
+        expect(stack.pop()).to.equal(4);
+        expect(stack.pop()).to.equal(3);
     });
     const stack_1 = new Stack<number>();
     stack_1.push(1);
