@@ -21,4 +21,4 @@ stack_1.push(4);
 stack_1.push(1);
 stack_1.push(8);
 
-console.log("Equals: " + stack.equals(stack_1))
+console.log("Equals: " + stack.equals(stack_1));
