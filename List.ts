@@ -7,9 +7,13 @@ export class LinkedList<T>{
 
     add(arg: T, index: number){
         let a = new LinkedList<T>();
+        let peak = this.top;
+        while(peak.next != null){
+            peak = peak.next;
+        }
         a.value = arg;
-        a.next = this.top.next;
-        this.top.next = a;
+        a.next = peak.next;
+        peak.next = a;
         this.size++;
         console.log(a);/*
         while(this.top.next != null){
@@ -46,14 +50,25 @@ export class LinkedList<T>{
 */
     }
     remove(index: number){
+        //console.log(this.top.value);
+        let peak = this.top;
         if(this.next == null){
             return null;
         }
-        let result : T;
-        result = this.next.value;
-        this.next = this.next.next;
-        this.size--;
-        return result;
+        if(index > this.size || this.size == 0){
+            return null;
+        }
+
+        let check: number = 0;
+        while(peak != null){
+            if(check == index-1){
+                peak.next = peak.next.next;
+               // this.next = this.next.next;
+                this.size--;
+            }
+            //this.next = this.next.next;
+            peak = peak.next;
+        }
     }
 
     get(index: number){
@@ -73,8 +88,11 @@ export class LinkedList<T>{
         return this.size;
     }
     print(){
-        while(this.top.next != null){
-            console.log(this.value);
+        while(this.top != null){
+            let result : T;
+            result = this.next.value;
+            this.next = this.next.next;
+            console.log(result);
             this.top = this.top.next;
         }
     }

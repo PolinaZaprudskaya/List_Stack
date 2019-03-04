@@ -9,6 +9,9 @@ list.add("Katya", 8);
 
 console.log("Size: " + list.Size());
 list.print();
+list.remove(2);
+console.log("Size: " + list.Size());
+list.print();
 
 /*
 const list_2 = new LinkedList<string>();
