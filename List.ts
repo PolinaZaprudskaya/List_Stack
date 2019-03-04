@@ -1,5 +1,92 @@
 export class LinkedList<T>{
-    private linked_list: T[] = [];
+
+    private next = null;
+    private value: T;
+    private top = this;
+    private size: number = 0;
+
+    add(arg: T, index: number){
+        let a = new LinkedList<T>();
+        a.next = this.top.next;
+        this.top.next = a;
+        this.size++;
+        console.log(a);
+        /*while(this.top.next != null){
+            this.top = this.top.next;
+        }
+        a.value = arg;
+        a.next = this.top.next;
+        this.top.next = a;*/
+
+        /*if(index >= this.size){
+            let i: number = 0;
+            while(i == index-this.size-1){
+                let a = new LinkedList<T>();
+                a.next = this.top.next;
+                this.top.next = a;
+                this.size++;
+            }
+            let a = new LinkedList<T>();
+            a.value = arg;
+            a.next = this.top.next;
+            this.top.next = a;
+
+        }
+        if(index < this.size){
+            let i: number = 0;
+            let check: number = 0;
+            while(this.top != null){
+                if(check==index){
+                    this.value = arg;
+                }
+                check++;
+            }
+        }
+*/
+    }
+    remove(index: number){
+        if(this.next == null){
+            return null;
+        }
+        let result : T;
+        result = this.next.value;
+        this.next = this.next.next;
+        this.size--;
+        return result;
+    }
+
+    get(index: number){
+        if(index > this.size){
+            return null;
+        }
+        let check: number = 0;
+        while(this.top != null){
+            if(index == check){
+                return this.value;
+            }
+            check++;
+            this.top = this.top.next;
+        }
+    }
+    Size(){
+        return this.size;
+    }
+    print(){
+        while(this.top.next != null){
+            console.log(this.value);
+            this.top = this.top.next;
+        }
+    }
+    ToString(){
+
+    }
+    equals(){
+
+    }
+    hashcode(){
+
+    }
+   /* private linked_list: T[] = [];
     private key: number = 0;
 
     public add(arg: T): void{
@@ -45,4 +132,5 @@ export class LinkedList<T>{
     public remove(index: number){
         delete this.linked_list[index];
     }
+    */
 }
