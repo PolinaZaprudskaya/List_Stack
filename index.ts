@@ -1,5 +1,13 @@
 import {Stack} from "./Stack";
+const stack = new Stack<number>();
+stack.push(9);
+console.log(stack.Size());
+stack.push(9);
+stack.push(4);
+stack.push(3);
+console.log(stack.Size());
 
+/*
 const stack = new Stack<number>();
 stack.push(9);
 stack.push(4);
@@ -22,3 +30,4 @@ stack_1.push(1);
 stack_1.push(8);
 
 console.log("Equals: " + stack.equals(stack_1));
+*/

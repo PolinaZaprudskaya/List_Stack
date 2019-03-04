@@ -1,5 +1,44 @@
 export class Stack<T>{
-    private stack: T[] = [];
+    private next = null;
+    private value: T;
+    private size: number = 0;
+
+    push(arg: T){
+        let a = new Stack<T>();
+        a.value = arg;
+        a.next = this.next;
+        this.next = a;
+        this.size++;
+    }
+    pop(){
+        if(this.next == null){
+            return null;
+        }
+        let result : T;
+        result = this.next.value;
+        this.next = this.next.next;
+        this.size--;
+        return result;
+    }
+    Size(){
+        return this.size;
+    }
+   /* print(){
+        while(this.next != null){
+            console.log(this.pop());
+        }
+    }*/
+    ToString(){
+
+    }
+    equals(){
+
+    }
+    hashcode(){
+
+    }
+
+    /* private stack: T[] = [];
 
     public push(arg: T){
       this.stack.push(arg);
@@ -37,5 +76,5 @@ export class Stack<T>{
         }
         return hash;
     }
-
+*/
 }
