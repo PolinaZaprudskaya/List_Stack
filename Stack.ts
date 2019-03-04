@@ -23,16 +23,27 @@ export class Stack<T>{
     Size(){
         return this.size;
     }
-   /* print(){
+    print(){
         while(this.next != null){
             console.log(this.pop());
         }
-    }*/
-    ToString(){
-
     }
-    equals(){
-
+    ToString(){
+        let str: string = "";
+        while(this.next != null) {
+            str += this.pop(); //сделать полную копию стека
+        }
+        console.log("ToString: " + str);
+        return str;
+    }
+    equals(stack_2: Stack<T>){
+        if(this.Size() == stack_2.Size()) {
+            if((this.ToString() !== stack_2.ToString() )){
+                return false;
+            }
+            return true;
+        }
+        return false;
     }
     hashcode(){
 

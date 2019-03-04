@@ -6,6 +6,14 @@ stack.push(9);
 stack.push(4);
 stack.push(3);
 console.log(stack.Size());
+//stack.ToString();
+
+const stack_2 = new Stack<number>();
+stack_2.push(9);
+stack_2.push(9);
+stack_2.push(2);
+stack_2.push(3);
+console.log("Equals: "+ stack.equals(stack_2));
 
 /*
 const stack = new Stack<number>();
