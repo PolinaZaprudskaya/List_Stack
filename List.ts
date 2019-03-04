@@ -6,16 +6,18 @@ export class LinkedList<T>{
     private size: number = 0;
 
     add(arg: T, index: number){
-        let a = new LinkedList<T>();
-        let peak = this.top;
-        while(peak.next != null){
-            peak = peak.next;
+
+        while(this.top.next != null){
+            if(this.next == null){
+                let a = new LinkedList<T>();
+                a.value = arg;
+                a.next = this.next;
+                this.next = a;
+                this.size++;
+                console.log(a);
+            }
         }
-        a.value = arg;
-        a.next = peak.next;
-        peak.next = a;
-        this.size++;
-        console.log(a);/*
+       /*
         while(this.top.next != null){
             this.top = this.top.next;
         }
