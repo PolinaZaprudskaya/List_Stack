@@ -4,8 +4,9 @@ const list = new LinkedList<string>();
 list.add("Sasha", 2);
 list.add("Dasha", 8);
 console.log("Size: " + list.Size());
-list.add("Sasha", 2);
-list.add("Dasha", 8);
+list.add("Polina", 2);
+list.add("Katya", 8);
+
 console.log("Size: " + list.Size());
 list.print();
 

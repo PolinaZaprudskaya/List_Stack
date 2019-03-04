@@ -7,17 +7,18 @@ export class LinkedList<T>{
 
     add(arg: T, index: number){
         let a = new LinkedList<T>();
+        a.value = arg;
         a.next = this.top.next;
         this.top.next = a;
         this.size++;
-        console.log(a);
-        /*while(this.top.next != null){
+        console.log(a);/*
+        while(this.top.next != null){
             this.top = this.top.next;
         }
         a.value = arg;
         a.next = this.top.next;
-        this.top.next = a;*/
-
+        this.top.next = a;
+*/
         /*if(index >= this.size){
             let i: number = 0;
             while(i == index-this.size-1){
