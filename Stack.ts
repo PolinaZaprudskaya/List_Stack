@@ -10,32 +10,40 @@ export class Stack<T>{
         this.next = a;
         this.size++;
     }
+
     pop(){
         if(this.next == null){
             return null;
         }
         let result : T;
+      //  console.log("this.next.value: " + this.next.value);
         result = this.next.value;
+
         this.next = this.next.next;
         this.size--;
         return result;
     }
+
     Size(){
         return this.size;
     }
-    print(){
-        while(this.next != null){
-            console.log(this.pop());
+    get(){
+        if(this.next == null){
+            return null;
         }
+        let result : T;
+        result = this.next.value;
+        return result;
     }
     ToString(){
         let str: string = "";
         while(this.next != null) {
-            str += this.pop(); //сделать полную копию стека
+            str += this.get(); //сделать полную копию стека
+            this.next = this.next.next;
         }
-        console.log("ToString: " + str);
         return str;
     }
+
     equals(stack_2: Stack<T>){
         if(this.Size() == stack_2.Size()) {
             if((this.ToString() !== stack_2.ToString() )){
@@ -45,47 +53,19 @@ export class Stack<T>{
         }
         return false;
     }
+
     hashcode(){
-
-    }
-
-    /* private stack: T[] = [];
-
-    public push(arg: T){
-      this.stack.push(arg);
-    }
-
-    public size<T>():number{
-        return this.stack.length;
-    }
-
-    public ToString<T>(): string {
-        return this.stack.join("");
-    }
-
-    public pop(){
-       return this.stack.pop();
-    }
-
-    public equals<T>(arg: Stack<T>): boolean {
-        if(this.stack.length == arg.stack.length) {
-            for (let key in this.stack) {
-                if((this.stack[key]).toString() !== (arg.stack[key]).toString() ) {
-                    return false;
-                }
-            }
-            return true;
-        }
-        return false;
-    }
-
-    public hashcode<T>(): number {
         let hash = 0;
-        for(let i=0;i<this.stack.length;i++){
-            hash += Math.pow((this.stack.join("")).charCodeAt(i)*31, this.stack.length - i);
+        for(let i=0;i<this.size;i++){
+            hash += Math.pow((this.ToString()).charCodeAt(i)*31, this.size - i);
             hash = hash&hash;
         }
         return hash;
     }
-*/
+
+    print(){
+        while(this.next != null){
+            console.log(this.pop());
+        }
+    }
 }
