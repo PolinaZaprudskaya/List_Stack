@@ -8,13 +8,13 @@ export class LinkedList<T> {
 
 //remove, equals, hashcode
     add_index(arg: T, index: number) {
-        if (index > this.size) {
+        if (index > this.size || index == 0) {
             while (index - this.size != 0) {
                 this.add(null);
             }
             this.add(arg);
         }
-        if (index <= this.size) {
+        else if (index <= this.size) {
             let a: Node<T> = this.top;
             let check: number = 0;
             while (a != null) {
@@ -111,24 +111,25 @@ export class LinkedList<T> {
     }
 
     remove(index: number){
-        if(index > this.size || this.size == 0){
+        if(index > this.size-1 || this.size == 0){
             return null;
+
         }
-        if(index == 0){
+        else if(index == 0){
             this.top = this.top.next;
             this.size--;
         }
-        let a: Node<T> = this.top;
-        let check: number = 0;
-        console.log("A.value:   " + a.value);
-        while(a ! = null){
-            console.log("_____________________");
-            if(check == index-1){
-                a.next = a.next.next;
-                this.size--;
+        else{
+            let a: Node<T> = this.top;
+            let check: number = 0;
+            while (a != null) {
+                if (check == index - 1) {
+                    a.next = a.next.next;
+                    this.size--;
+                }
+                a = a.next;
+                check++;
             }
-            a = a.next;
-            check++;
         }
     }
 

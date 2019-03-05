@@ -1,7 +1,7 @@
 import {LinkedList} from "./List";
 
 const list = new LinkedList<string>();
-list.add_index("Sasha", 4);
+list.add_index("Sasha", 0);
 list.add_index("Polina", 10);
 list.add_index("Masha", 1);
 list.add_index("Dasha", 3);
