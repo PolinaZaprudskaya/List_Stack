@@ -4,15 +4,17 @@
   "description": "",
   "main": "index.ts",
   "scripts": {
-    "test": "nyc mocha",
+    "test": "nyc mocha -r ts-node/register List.test.ts",
     "start": "ts-node index.ts"
   },
   "nyc": {
     "extension": [
       ".ts"
     ],
+    "include": [
+      "List.ts"
+    ],
     "exclude": [
-      "**/*.d.ts",
       "coverage"
     ],
     "require": [

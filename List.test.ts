@@ -5,28 +5,28 @@ import 'mocha';
 describe('List test', () => {
 
     const list = new LinkedList();
-    list.add_index("Sasha", 0);
-    list.add_index("Polina", 10);
-    list.add_index("Masha", 1);
-    list.add_index("Dasha", 3);
+    list.add("Sasha", 0);
+    list.add("Polina", 10);
+    list.add("Masha", 1);
+    list.add("Dasha", 3);
 
     const list_2 = new LinkedList();
-    list_2.add_index("Sasha", 0);
-    list_2.add_index("Polina", 10);
+    list_2.add("Sasha", 0);
+    list_2.add("Polina", 10);
 
     const list_4 = new LinkedList();
-    list_4.add_index("Sasha", 0);
-    list_4.add_index("Polina", 10);
-    list_4.add_index("Masha", 2);
+    list_4.add("Sasha", 0);
+    list_4.add("Polina", 10);
+    list_4.add("Masha", 2);
 
     const list_3 = new LinkedList();
-    list_3.add_index("Sasha", 0);
-    list_3.add_index("Polina", 10);
-    list_3.add_index("Masha", 2);
-    list_3.add_index("Dasha", 3);
+    list_3.add("Sasha", 0);
+    list_3.add("Polina", 10);
+    list_3.add("Masha", 2);
+    list_3.add("Dasha", 3);
 
     describe("Add", function () {
-        list_2.add_index("Masha", 2);
+        list_2.add("Masha", 2);
     });
 
     describe("Remove", function () {
@@ -54,12 +54,6 @@ describe('List test', () => {
             expect(list_2.equals(list_4)).to.equal(true);
         });
 
-    });
-
-    describe("Hashcode", function () {
-        it('Should return 1068813220', () => {
-            expect(list.hashcode()).to.equal(1068813220);
-        });
     });
 
     describe("Get", function () {
