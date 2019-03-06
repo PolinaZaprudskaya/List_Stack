@@ -4,48 +4,76 @@ import 'mocha';
 
 describe('List test', () => {
 
-    const list = new LinkedList<string>();
-    list.add("Sasha"); //0
-    list.add("Dasha"); //1
-    list.add("Anya"); //2
-    list.add("Katya"); //3
+    const list = new LinkedList();
+    list.add_index("Sasha", 0);
+    list.add_index("Polina", 10);
+    list.add_index("Masha", 1);
+    list.add_index("Dasha", 3);
 
-    it('Should return 47162577', () => {
-        expect(list.hashcode()).to.equal(47162577);
+    const list_2 = new LinkedList();
+    list_2.add_index("Sasha", 0);
+    list_2.add_index("Polina", 10);
+
+
+    const list_3 = new LinkedList();
+    list_3.add_index("Sasha", 0);
+    list_3.add_index("Polina", 10);
+    list_3.add_index("Masha", 2);
+    list_3.add_index("Dasha", 3);
+
+    describe("Add", function () {
+        list_2.add_index("Masha", 2);
     });
-
-    it('Should return SashaDashaAnyaKatya', () => {
-        expect(list.ToString()).to.equal('SashaDashaAnyaKatya');
+    describe("Remove", function () {
+        list_3.remove(3);
     });
+    describe("ToString", function () {
+        it('Should return SashaMashanullDashanullnullnullnullnullnullPolina', () => {
+            expect(list.ToString()).to.equal('SashaMashanullDashanullnullnullnullnullnullPolina');
+        });
+        it('Should return SashanullMashanullnullnullnullnullnullPolina', () => {
+            expect(list_3.ToString()).to.equal('SashanullMashanullnullnullnullnullnullPolina');
+        });
 
-    it('Should return 4', () => {
-        expect(list.size()).to.equal(4);
     });
+    describe("Equals", function () {
+        it('Should return false', () => {
+            expect(list.equals(list_2)).to.equal(false);
+        });
+        it('Should return false (2)', () => {
+            expect(list.equals(list_3)).to.equal(false);
+        });
+        it('Should return true', () => {
+            expect(list_2.equals(list_3)).to.equal(true);
+        });
 
-    it('Should return Anya', () => {
-        expect(list.get(2)).to.equal("Anya");
     });
-
-    const list_1 = new LinkedList<string>();
-    list_1.add("Marina");
-    const list_2 = new LinkedList<string>();
-    list_2.add("Marina");
-
-    it('Should return true', () => {
-        expect(list_1.equals(list_2)).to.equal(true);
+    describe("Hashcode", function () {
+        it('Should return 1068813220', () => {
+            expect(list.hashcode()).to.equal(1068813220);
+        });
     });
+    describe("Get", function () {
+        it('Should return Anya', () => {
+            expect(list.get(2)).to.equal(null);
+        });
+        it('Should return Masha', () => {
+            expect(list.get(1)).to.equal("Masha");
+        });
+        it('Should return null', () => {
+            expect(list.get(13)).to.equal(null);
+        });
 
-    const list_3 = new LinkedList<string>();
-    list_3.add("Sasha");
-    list_3.add("Dasha");
-    list_3.add("Anya");
-    list_3.add("Katya");
-
-    list_3.remove(2);
-    list_3.remove(0);
-
-    it('Should return SashaDashaAnyaKatya', () => {
-        expect(list_3.ToString()).to.equal('DashaKatya');
     });
+    describe("Size", function () {
+        it('Should return 11', () => {
+            expect(list.Size()).to.equal(11);
+        });
+        it('Should return 10', () => {
+            expect(list_3.Size()).to.equal(10);
+        });
+    });
+})
 
-});
+
+
