@@ -6,7 +6,6 @@ export class LinkedList<T> {
     private top = null;
     private size: number = 0;
 
-//remove, equals, hashcode
     add_index(arg: T, index: number) {
         if (index > this.size || index == 0) {
             while (index - this.size != 0) {
@@ -25,7 +24,6 @@ export class LinkedList<T> {
                 a = a.next;
             }
         }
-
     }
 
     add(arg: T) {//в конец
@@ -132,5 +130,4 @@ export class LinkedList<T> {
             }
         }
     }
-
 }
