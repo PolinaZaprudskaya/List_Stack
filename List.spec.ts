@@ -14,6 +14,10 @@ describe('List test', () => {
     list_2.add_index("Sasha", 0);
     list_2.add_index("Polina", 10);
 
+    const list_4 = new LinkedList();
+    list_4.add_index("Sasha", 0);
+    list_4.add_index("Polina", 10);
+    list_4.add_index("Masha", 2);
 
     const list_3 = new LinkedList();
     list_3.add_index("Sasha", 0);
@@ -44,7 +48,7 @@ describe('List test', () => {
             expect(list.equals(list_3)).to.equal(false);
         });
         it('Should return true', () => {
-            expect(list_2.equals(list_3)).to.equal(true);
+            expect(list_2.equals(list_4)).to.equal(true);
         });
 
     });
