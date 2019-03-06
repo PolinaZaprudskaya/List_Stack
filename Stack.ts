@@ -1,14 +1,22 @@
+class Node<T>{
+    public next = null;
+    public value: T;
+    constructor(arg: T){
+        this.value = arg;
+        this.next = null;
+    }
+}
+
 export class Stack<T>{
-    private next = null;
-    private value: T;
+
     private size: number = 0;
 
     push(arg: T){
-        let a = new Stack<T>();
-        a.value = arg;
+        let a = new Node<T>(arg);
+
         a.next = this.next;
         this.next = a;
-        this.size++;
+        this.size += 1;
     }
 
     pop(){
@@ -38,7 +46,7 @@ export class Stack<T>{
     ToString(){
         let str: string = "";
         while(this.next != null) {
-            str += this.get(); //сделать полную копию стека
+            str += this.get();
             this.next = this.next.next;
         }
         return str;
@@ -52,20 +60,5 @@ export class Stack<T>{
             return true;
         }
         return false;
-    }
-
-    hashcode(){
-        let hash = 0;
-        for(let i=0;i<this.size;i++){
-            hash += Math.pow((this.ToString()).charCodeAt(i)*31, this.size - i);
-            hash = hash&hash;
-        }
-        return hash;
-    }
-
-    print(){
-        while(this.next != null){
-            console.log(this.pop());
-        }
     }
 }
