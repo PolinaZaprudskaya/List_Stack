@@ -1,7 +1,8 @@
 class Node<T> {
     public value: T;
     public next = null;
-    constructor(arg: T){
+
+    constructor(arg: T) {
         this.value = arg;
         this.next = null;
 
@@ -17,7 +18,7 @@ export class LinkedList<T> {
             let n = new Node<T>(arg);
             this.top = n;
             this.size += 1;
-        } else if (index > this.size-1) {
+        } else if (index > this.size - 1) {
             let a: Node<T> = this.top;
             while (a.next != null) {
                 a = a.next;
@@ -70,8 +71,7 @@ export class LinkedList<T> {
     equals(stack_2: LinkedList<T>) {
         if (this.Size() != stack_2.Size()) {
             return false;
-        }
-        if ((this.ToString() !== stack_2.ToString())) {
+        } else if ((this.ToString() !== stack_2.ToString())) {
             return false;
         }
         return true;
