@@ -58,8 +58,8 @@ describe('Stack test', () => {
         it('Should return 4', () => {
             expect(stack.Size()).to.equal(4);
         });
-        it('Should return 7', () => {
-            expect(stack_1.Size()).to.equal(7);
+        it('Should return 3', () => {
+            expect(stack_1.Size()).to.equal(3);
         });
         it('Should return 0', () => {
             expect(stack_3.Size()).to.equal(0);
