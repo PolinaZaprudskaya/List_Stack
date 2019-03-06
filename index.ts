@@ -1,7 +1,6 @@
 import {Stack} from "./Stack";
-const stack = new Stack<number>();
+/*const stack = new Stack<number>();
 stack.push(9);
-console.log("Size: " + stack.Size());
 stack.push(9);
 stack.push(4);
 stack.push(3);
@@ -17,3 +16,19 @@ stack_2.push(4);
 stack_2.push(3);
 //console.log("ToString: " + stack_2.ToString());
 console.log("Equals: "+ stack.equals(stack_2));
+*/
+const stack = new Stack();
+stack.push(9);
+stack.push(9);
+stack.push(4);
+const stack_1 = new Stack();
+stack_1.push(90);
+stack_1.push(9);
+stack_1.push(4);
+stack_1.push(3);
+console.log(stack.hashcode());
+console.log(stack_1.hashcode());
+stack.push(3);
+stack_1.pop();
+console.log(stack.hashcode());
+console.log(stack_1.hashcode());

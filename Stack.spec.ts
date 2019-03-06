@@ -3,44 +3,62 @@ import { expect } from 'chai';
 import 'mocha';
 
 describe('Stack test', () => {
-    const stack = new Stack<number>();
-    stack.push(1);
-    stack.push(2);
-    stack.push(3);
+    const stack = new Stack();
+    stack.push(9);
+    stack.push(9);
     stack.push(4);
-    stack.push(4);
+    const stack_1 = new Stack();
+    stack_1.push(9);
+    stack_1.push(9);
+    stack_1.push(4);
+    stack_1.push(4);
+    stack_1.push(7);
+    stack_1.push(4);
+    stack_1.push(3);
+    const stack_3 = new Stack();
 
-    it('Should return 1800617104', () => {
-        expect(stack.hashcode()).to.equal(1800617104);
+    describe("Push", function () {
+        stack.push(3);
     });
-
-    it('Should return hello 12344', () => {
-        expect(stack.ToString()).to.equal('12344');
+    describe("Pop", function () {
+        it('Should return 3', () => {
+            expect(stack_1.pop()).to.equal(3);
+        });
+        it('Should return 4', () => {
+            expect(stack_1.pop()).to.equal(4);
+        });
+        it('Should return 7', () => {
+            expect(stack_1.pop()).to.equal(7);
+        });
+        it('Should return 4', () => {
+            expect(stack_1.pop()).to.equal(4);
+        });
     });
-
-    it('Should return 5', () => {
-        expect(stack.size()).to.equal(5);
+    describe("ToString", function () {
+        it('Should return 3499', () => {
+        expect(stack.ToString()).to.equal('3499');
+        });
+        it('Should return 499', () => {
+            expect(stack_1.ToString()).to.equal('499');
+        });
     });
-
-    it('Should return 4', () => {
-        expect(stack.pop()).to.equal(4);
-        expect(stack.pop()).to.equal(4);
-        expect(stack.pop()).to.equal(3);
+    describe("Equals", function () {
+        it('Should return true', () => {
+            expect(stack.equals(stack)).to.equal(true);
+        });
+        it('Should return false', () => {
+            expect(stack.equals(stack_1)).to.equal(false);
+        });
     });
-
-    const stack_1 = new Stack<number>();
-    stack_1.push(1);
-    const stack_2 = new Stack<number>();
-    stack_2.push(1);
-
-    it('Should return true', () => {
-        expect(stack_1.equals(stack_2)).to.equal(true);
+    describe("Size", function () {
+        it('Should return 4', () => {
+            expect(stack.Size()).to.equal(4);
+        });
+        it('Should return 7', () => {
+            expect(stack_1.Size()).to.equal(7);
+        });
+        it('Should return 0', () => {
+            expect(stack_3.Size()).to.equal(0);
+        });
     });
-    const stack_3 = new Stack<number>();
-    stack_3.push(1);
-
-    it('Should return 1', () => {
-        expect(stack_3.pop()).to.equal(1);
-    });
-
 });
