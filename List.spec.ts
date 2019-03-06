@@ -28,9 +28,11 @@ describe('List test', () => {
     describe("Add", function () {
         list_2.add_index("Masha", 2);
     });
+
     describe("Remove", function () {
         list_3.remove(3);
     });
+
     describe("ToString", function () {
         it('Should return SashaMashanullDashanullnullnullnullnullnullPolina', () => {
             expect(list.ToString()).to.equal('SashaMashanullDashanullnullnullnullnullnullPolina');
@@ -40,6 +42,7 @@ describe('List test', () => {
         });
 
     });
+
     describe("Equals", function () {
         it('Should return false', () => {
             expect(list.equals(list_2)).to.equal(false);
@@ -52,11 +55,13 @@ describe('List test', () => {
         });
 
     });
+
     describe("Hashcode", function () {
         it('Should return 1068813220', () => {
             expect(list.hashcode()).to.equal(1068813220);
         });
     });
+
     describe("Get", function () {
         it('Should return Anya', () => {
             expect(list.get(2)).to.equal(null);
@@ -69,6 +74,7 @@ describe('List test', () => {
         });
 
     });
+
     describe("Size", function () {
         it('Should return 11', () => {
             expect(list.Size()).to.equal(11);
