@@ -4,11 +4,25 @@
   "description": "",
   "main": "index.ts",
   "scripts": {
-    "test": "mocha -r ts-node/register List.spec.ts",
+    "test": "nyc mocha",
     "start": "ts-node index.ts"
   },
-  "author": "",
-  "license": "ISC",
+  "nyc": {
+    "extension": [
+      ".ts"
+    ],
+    "exclude": [
+      "**/*.d.ts",
+      "coverage"
+    ],
+    "require": [
+      "ts-node/register"
+    ],
+    "reporter": [
+      "html"
+    ],
+    "all": true
+  },
   "devDependencies": {
     "@types/chai": "^4.1.7",
     "@types/mocha": "^5.2.6",

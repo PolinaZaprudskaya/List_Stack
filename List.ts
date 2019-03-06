@@ -1,57 +1,40 @@
-class Node<T>{
+class Node<T> {
     public value: T;
     public next = null;
+    constructor(arg: T){
+        this.value = arg;
+        this.next = null;
+
+    }
 }
+
 export class LinkedList<T> {
     private top = null;
     private size: number = 0;
 
-    add_index(arg: T, index: number) {
-        if (index > this.size || index == 0) {
-            while (index - this.size != 0) {
-                this.add(null);
+    add(arg: T, index: number) {
+        if (this.top == null) {
+            let n = new Node<T>(arg);
+            this.top = n;
+            this.size += 1;
+        } else if (index > this.size-1) {
+            let a: Node<T> = this.top;
+            while (a.next != null) {
+                a = a.next;
             }
-            this.add(arg);
-        }
-        else if (index <= this.size) {
+            let n = new Node<T>(arg);
+            a.next = n;
+            this.size += 1;
+        } else {
             let a: Node<T> = this.top;
             let check: number = 0;
             while (a != null) {
                 if (check == index) {
                     a.value = arg;
                 }
-                check++;
+                check += 1;
                 a = a.next;
             }
-        }
-    }
-
-    add(arg: T) {//в конец
-        if (this.top == null) {
-            let n = new Node<T>();
-            n.value = arg;
-            this.top = n;
-            this.size++;
-            n.next = null;
-        } else {
-            let a: Node<T> = this.top;
-            while (a.next != null) {
-                a = a.next;
-            }
-            let n = new Node<T>();
-            n.value = arg;
-            a.next = n;
-            n.next = null;
-            this.size++;
-
-        }
-    }
-
-    print() {
-        let a: Node<T> = this.top;
-        while (a != null) {
-            console.log(a.value);
-            a = a.next;
         }
     }
 
@@ -70,7 +53,7 @@ export class LinkedList<T> {
                 return a.value;
             }
             a = a.next;
-            check++;
+            check += 1;
         }
     }
 
@@ -78,11 +61,6 @@ export class LinkedList<T> {
         let a: Node<T> = this.top;
         let str: string = "";
         while (a != null) {
-            /*if(a.value == null){
-                a = a.next;
-                continue;
-            }
-            */
             str += a.value;
             a = a.next;
         }
@@ -90,34 +68,22 @@ export class LinkedList<T> {
     }
 
     equals(stack_2: LinkedList<T>) {
-        if (this.Size() == stack_2.Size()) {
-            if ((this.ToString() !== stack_2.ToString())) {
-                return false;
-            }
-            return true;
+        if (this.Size() != stack_2.Size()) {
+            return false;
         }
-        return false;
+        if ((this.ToString() !== stack_2.ToString())) {
+            return false;
+        }
+        return true;
     }
 
-    hashcode() {
-        let hash = 0;
-        for (let i = 0; i < this.size; i++) {
-            hash += Math.pow((this.ToString()).charCodeAt(i) * 31, this.size - i);
-            hash = hash & hash;
-        }
-        return hash;
-    }
-
-    remove(index: number){
-        if(index > this.size-1 || this.size == 0){
+    remove(index: number) {
+        if (index > this.size - 1 || this.size == 0) {
             return null;
-
-        }
-        else if(index == 0){
+        } else if (index == 0) {
             this.top = this.top.next;
-            this.size--;
-        }
-        else{
+            this.size -= 1;
+        } else {
             let a: Node<T> = this.top;
             let check: number = 0;
             while (a != null) {
@@ -126,7 +92,7 @@ export class LinkedList<T> {
                     this.size--;
                 }
                 a = a.next;
-                check++;
+                check += 1;
             }
         }
     }
