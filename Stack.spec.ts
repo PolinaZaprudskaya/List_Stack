@@ -20,6 +20,7 @@ describe('Stack test', () => {
     describe("Push", function () {
         stack.push(3);
     });
+
     describe("Pop", function () {
         it('Should return 3', () => {
             expect(stack_1.pop()).to.equal(3);
@@ -34,6 +35,7 @@ describe('Stack test', () => {
             expect(stack_1.pop()).to.equal(4);
         });
     });
+
     describe("ToString", function () {
         it('Should return 3499', () => {
         expect(stack.ToString()).to.equal('3499');
@@ -42,6 +44,7 @@ describe('Stack test', () => {
             expect(stack_1.ToString()).to.equal('499');
         });
     });
+
     describe("Equals", function () {
         it('Should return true', () => {
             expect(stack.equals(stack)).to.equal(true);
@@ -50,6 +53,7 @@ describe('Stack test', () => {
             expect(stack.equals(stack_1)).to.equal(false);
         });
     });
+
     describe("Size", function () {
         it('Should return 4', () => {
             expect(stack.Size()).to.equal(4);
