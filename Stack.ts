@@ -8,7 +8,7 @@ class Node<T>{
 }
 
 export class Stack<T>{
-
+    private top = null;
     private size: number = 0;
 
     push(arg: T){
