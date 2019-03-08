@@ -25,12 +25,21 @@ describe('List test', () => {
     list_3.add("Masha", 2);
     list_3.add("Dasha", 3);
 
+    const list_5 = new LinkedList();
+    list_5.add("Sasha", 0);
+
     describe("Add", function () {
         list_2.add("Masha", 2);
     });
 
     describe("Remove", function () {
         list_3.remove(3);
+        it('Should return null', () => {
+            expect(list_3.remove(15)).to.equal(null);
+        });
+
+        list_5.remove(0);
+
     });
 
     describe("ToString", function () {

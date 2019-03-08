@@ -70,7 +70,6 @@ export class LinkedList<T> {
 
     equals(stack_2: LinkedList<T>) {
         return this.ToString() === stack_2.ToString();
-
     }
 
     remove(index: number) {
