@@ -69,12 +69,8 @@ export class LinkedList<T> {
     }
 
     equals(stack_2: LinkedList<T>) {
-        if (this.Size() != stack_2.Size()) {
-            return false;
-        } else if ((this.ToString() !== stack_2.ToString())) {
-            return false;
-        }
-        return true;
+        return this.ToString() === stack_2.ToString();
+
     }
 
     remove(index: number) {
