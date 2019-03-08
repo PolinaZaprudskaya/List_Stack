@@ -4,8 +4,26 @@
   "description": "",
   "main": "index.ts",
   "scripts": {
-    "test": "mocha -r ts-node/register Stack.spec.ts",
+    "test": "nyc mocha -r ts-node/register Stack.test.ts",
     "start": "ts-node index.ts"
+  },
+  "nyc": {
+    "extension": [
+      ".ts"
+    ],
+    "include": [
+      "Stack.ts"
+    ],
+    "exclude": [
+      "coverage"
+    ],
+    "require": [
+      "ts-node/register"
+    ],
+    "reporter": [
+      "html"
+    ],
+    "all": true
   },
   "author": "",
   "license": "ISC",

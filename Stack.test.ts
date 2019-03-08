@@ -34,6 +34,9 @@ describe('Stack test', () => {
         it('Should return 4', () => {
             expect(stack_1.pop()).to.equal(4);
         });
+        it('Should return null', () => {
+            expect(stack_3.pop()).to.equal(null);
+        });
     });
 
     describe("ToString", function () {
@@ -64,5 +67,8 @@ describe('Stack test', () => {
         it('Should return 0', () => {
             expect(stack_3.Size()).to.equal(0);
         });
+    });
+    it('Should return null', () => {
+        expect(stack_3.get()).to.equal(null);
     });
 });
