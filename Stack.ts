@@ -13,21 +13,18 @@ export class Stack<T>{
 
     push(arg: T){
         let a = new Node<T>(arg);
-
-        a.next = this.next;
-        this.next = a;
+        a.next = this.top;
+        this.top = a;
         this.size += 1;
     }
 
     pop(){
-        if(this.next == null){
+        if(this.top == null){
             return null;
         }
         let result : T;
-      //  console.log("this.next.value: " + this.next.value);
-        result = this.next.value;
-
-        this.next = this.next.next;
+        result = this.top.value;
+        this.top = this.top.next;
         this.size--;
         return result;
     }
@@ -36,29 +33,21 @@ export class Stack<T>{
         return this.size;
     }
     get(){
-        if(this.next == null){
+        if(this.top == null){
             return null;
         }
-        let result : T;
-        result = this.next.value;
-        return result;
+        return this.top.value;
     }
     ToString(){
         let str: string = "";
-        while(this.next != null) {
+        while(this.top != null) {
             str += this.get();
-            this.next = this.next.next;
+            this.top = this.top.next;
         }
         return str;
     }
 
     equals(stack_2: Stack<T>){
-        if(this.Size() == stack_2.Size()) {
-            if((this.ToString() !== stack_2.ToString() )){
-                return false;
-            }
-            return true;
-        }
-        return false;
+        return this.ToString() === stack_2.ToString();
     }
 }
