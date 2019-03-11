@@ -8,6 +8,7 @@ class Node<T>{
 }
 
 export class Stack<T>{
+
     private top = null;
     private length: number = 0;
 
