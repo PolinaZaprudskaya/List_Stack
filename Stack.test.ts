@@ -41,10 +41,10 @@ describe('Stack test', () => {
 
     describe("ToString", function () {
         it('Should return 3499', () => {
-        expect(stack.ToString()).to.equal('3499');
+        expect(stack.toString()).to.equal('3499');
         });
         it('Should return 499', () => {
-            expect(stack_1.ToString()).to.equal('499');
+            expect(stack_1.toString()).to.equal('499');
         });
     });
 
@@ -59,13 +59,13 @@ describe('Stack test', () => {
 
     describe("Size", function () {
         it('Should return 4', () => {
-            expect(stack.Size()).to.equal(4);
+            expect(stack.size()).to.equal(4);
         });
         it('Should return 3', () => {
-            expect(stack_1.Size()).to.equal(3);
+            expect(stack_1.size()).to.equal(3);
         });
         it('Should return 0', () => {
-            expect(stack_3.Size()).to.equal(0);
+            expect(stack_3.size()).to.equal(0);
         });
     });
     it('Should return null', () => {

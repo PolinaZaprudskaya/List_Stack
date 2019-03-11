@@ -9,13 +9,13 @@ class Node<T>{
 
 export class Stack<T>{
     private top = null;
-    private size: number = 0;
+    private length: number = 0;
 
     push(arg: T){
         let a = new Node<T>(arg);
         a.next = this.top;
         this.top = a;
-        this.size += 1;
+        this.length += 1;
     }
 
     pop(){
@@ -25,20 +25,22 @@ export class Stack<T>{
         let result : T;
         result = this.top.value;
         this.top = this.top.next;
-        this.size--;
+        this.length--;
         return result;
     }
 
-    Size(){
-        return this.size;
+    size(){
+        return this.length;
     }
+
     get(){
         if(this.top == null){
             return null;
         }
         return this.top.value;
     }
-    ToString(){
+
+    toString(){
         let str: string = "";
         while(this.top != null) {
             str += this.get();
@@ -48,6 +50,6 @@ export class Stack<T>{
     }
 
     equals(stack_2: Stack<T>){
-        return this.ToString() === stack_2.ToString();
+        return this.toString() === stack_2.toString();
     }
 }
