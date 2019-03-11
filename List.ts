@@ -11,21 +11,21 @@ class Node<T> {
 
 export class LinkedList<T> {
     private top = null;
-    private size: number = 0;
+    private length: number = 0;
 
     add(arg: T, index: number) {
         if (this.top == null) {
             let n = new Node<T>(arg);
             this.top = n;
-            this.size += 1;
-        } else if (index > this.size - 1) {
+            this.length += 1;
+        } else if (index > this.length - 1) {
             let a: Node<T> = this.top;
             while (a.next != null) {
                 a = a.next;
             }
             let n = new Node<T>(arg);
             a.next = n;
-            this.size += 1;
+            this.length += 1;
         } else {
             let a: Node<T> = this.top;
             let check: number = 0;
@@ -39,12 +39,12 @@ export class LinkedList<T> {
         }
     }
 
-    Size() {
-        return this.size;
+    size() {
+        return this.length;
     }
 
     get(index: number) {
-        if (index > this.size || this.top == null) {
+        if (index > this.length || this.top == null) {
             return null;
         }
         let a: Node<T> = this.top;
@@ -58,7 +58,7 @@ export class LinkedList<T> {
         }
     }
 
-    ToString() {
+    toString() {
         let a: Node<T> = this.top;
         let str: string = "";
         while (a != null) {
@@ -69,22 +69,22 @@ export class LinkedList<T> {
     }
 
     equals(stack_2: LinkedList<T>) {
-        return this.ToString() === stack_2.ToString();
+        return this.toString() === stack_2.toString();
     }
 
     remove(index: number) {
-        if (index > this.size - 1 || this.size == 0) {
+        if (index > this.length - 1 || this.length == 0) {
             return null;
         } else if (index == 0) {
             this.top = this.top.next;
-            this.size -= 1;
+            this.length -= 1;
         } else {
             let a: Node<T> = this.top;
             let check: number = 0;
             while (a != null) {
                 if (check == index - 1) {
                     a.next = a.next.next;
-                    this.size--;
+                    this.length--;
                 }
                 a = a.next;
                 check += 1;
