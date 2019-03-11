@@ -44,10 +44,10 @@ describe('List test', () => {
 
     describe("ToString", function () {
         it('Should return SashaMashanullDashanullnullnullnullnullnullPolina', () => {
-            expect(list.ToString()).to.equal('SashaMashanullDashanullnullnullnullnullnullPolina');
+            expect(list.toString()).to.equal('SashaMashanullDashanullnullnullnullnullnullPolina');
         });
         it('Should return SashanullMashanullnullnullnullnullnullPolina', () => {
-            expect(list_3.ToString()).to.equal('SashanullMashanullnullnullnullnullnullPolina');
+            expect(list_3.toString()).to.equal('SashanullMashanullnullnullnullnullnullPolina');
         });
 
     });
@@ -80,10 +80,10 @@ describe('List test', () => {
 
     describe("Size", function () {
         it('Should return 11', () => {
-            expect(list.Size()).to.equal(11);
+            expect(list.size()).to.equal(11);
         });
         it('Should return 10', () => {
-            expect(list_3.Size()).to.equal(10);
+            expect(list_3.size()).to.equal(10);
         });
     });
 })
